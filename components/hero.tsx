@@ -66,7 +66,7 @@ export default function Hero() {
                     </Stack>
                 </Stack>
 
-                <Stack boxSize={'1200'} mt={'190'} py={-20}>
+                <Stack boxSize={'1000'} mt={'190'} py={-20}>
                     <Image  src={goldcoins} alt={'money-sign'} />
                 </Stack>
                 </Flex>
