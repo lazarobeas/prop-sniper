@@ -38,7 +38,7 @@ export default function Hero() {
                         fontSize={{ base: '3xl', sm: '6xl', md: '7xl' }}
                         lineHeight={'110%'}>
                         Make winning easier <br />
-                        <Text as={'span'} color={'red.500'}>
+                        <Text as={'span'} color={'red'}>
                             AI powered insights
                         </Text>
                     </Heading>
