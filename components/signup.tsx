@@ -9,6 +9,7 @@ import {
     Text,
     Container,
     Flex,
+    useToast,
 } from '@chakra-ui/react';
 import { CheckIcon } from '@chakra-ui/icons';
 
@@ -18,6 +19,47 @@ export default function Signup() {
         'initial'
     );
     const [error, setError] = useState(false);
+    const toast = useToast();
+
+    const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        if (!email) {
+            return toast({
+                description: 'Email is required',
+                status: 'error'
+            });
+        }
+
+        setState("submitting");
+
+        try {
+            const res = await fetch('/api/subscribe', {
+                method: 'POST',
+                body: JSON.stringify({ email: email })
+            });
+
+            const data = await res.json();
+
+            if (data.success){
+                toast({
+                    title: 'Joined successfully.',
+                    description: 'Thanks for joining the waitlist!',
+                    status: 'success'
+                });
+                setState("success");
+                setEmail('');
+            } else {
+                throw new Error(data?.error || 'Something went wrong, try again later.')
+            }
+        } catch(e) {
+            toast({
+                description: (e as Error).message,
+                status: 'error'
+            });
+            setState("initial");
+        }
+    }
 
     return (
         <Flex
@@ -42,22 +84,7 @@ export default function Signup() {
                     direction={{ base: 'column', md: 'row' }}
                     as={'form'}
                     spacing={'12px'}
-                    onSubmit={(e: FormEvent) => {
-                        e.preventDefault();
-                        setError(false);
-                        setState('submitting');
-
-                        // remove this code and implement your submit logic right here
-                        setTimeout(() => {
-                            if (email === 'fail@example.com') {
-                                setError(true);
-                                setState('initial');
-                                return;
-                            }
-
-                            setState('success');
-                        }, 1000);
-                    }}>
+                    onSubmit={ handleFormSubmit }>
                     <FormControl>
                         <Input
                             variant={'solid'}

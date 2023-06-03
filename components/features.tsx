@@ -39,7 +39,7 @@ export default function Features() {
                         <Divider bg={"black"}/>
                         <Text>
                             Leveraging AI, our models give you an edge in Pick&apos;em contests.
-                            Simply input a player&apos;s tats and its prop line.
+                            Simply input a player&apos;s stats and its prop line.
                             Our system then simulates outcomes, providing you with the
                             probability of over/under performance. This helps you make
                             informed decisions swiftly and confidently.

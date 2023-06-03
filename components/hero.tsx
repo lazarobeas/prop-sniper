@@ -25,7 +25,7 @@ export default function Hero() {
                 />
             </Head>
 
-            <Box bgGradient='linear(to-r, gray.300, yellow.400, pink.200)' w={'100%'} minH={'100vh'}>
+            <Box bgGradient='linear(to-r, gray.300, yellow.400, pink.200)' w={'100%'} minH={{base:'80vh', md:'87vh', sm:'80vh'}}>
                 <Container maxW={'5xl'} maxH={'2xl'}>
                 <Flex>
                 <Stack
@@ -66,7 +66,7 @@ export default function Hero() {
                     </Stack>
                 </Stack>
 
-                <Stack boxSize={'1000'} mt={'190'} py={-20}>
+                <Stack boxSize={'1000'} mt={'190'} py={-10}>
                     <Image  src={goldcoins} alt={'money-sign'} />
                 </Stack>
                 </Flex>

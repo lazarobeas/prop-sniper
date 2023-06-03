@@ -41,9 +41,15 @@ export default function Footer() {
                     </Stack>
                     <Stack align={'flex-start'}>
                         <ListHeader>Follow Us</ListHeader>
-                        <Link href={'#'}>Instagram</Link>
-                        <Link href={'#'}>Twitter</Link>
-                        <Link href={'#'}>TikTok</Link>
+                        <Link href={'https://www.instagram.com/prop.sniper/'}>Instagram</Link>
+                        <Link href={'https://www.twitter.com/'}>Twitter</Link>
+                        <Link href={'https://www.tiktok.com/'}>TikTok</Link>
+                    </Stack>
+                    <Stack align={'flex-start'}>
+                        <ListHeader>Legal</ListHeader>
+                        <Link href={'#'}>Terms of Service</Link>
+                        <Link href={'#'}>Privacy Policy</Link>
+                        <Link href={'#'}>Disclaimer</Link>
                     </Stack>
                 </SimpleGrid>
             </Container>

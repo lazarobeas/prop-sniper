@@ -51,7 +51,7 @@ export default function Navbar() {
                     <Spacer />
                     <Flex alignItems={'right'}>
                         <Stack direction={'row'} spacing={7}>
-                            <Text as='b' fontSize={{ base: 'md', md: 'xl', lg: '2xl' }}>Private Beta Available Now</Text>
+                            <Text as='b' fontSize={{ base: 'md', md: 'xl', lg: '2xl' }}>Private Beta Available</Text>
                         </Stack>
                     </Flex>
                 </Flex>
