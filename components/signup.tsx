@@ -10,6 +10,7 @@ import {
     Container,
     Flex,
     useToast,
+    Box
 } from '@chakra-ui/react';
 import { CheckIcon } from '@chakra-ui/icons';
 
@@ -80,10 +81,8 @@ export default function Signup() {
                     mb={5}>
                     Get early access
                 </Heading>
-                <Stack
-                    direction={{ base: 'column', md: 'row' }}
+                <Box
                     as={'form'}
-                    spacing={'12px'}
                     onSubmit={ handleFormSubmit }>
                     <FormControl>
                         <Input
@@ -106,7 +105,7 @@ export default function Signup() {
                             }
                         />
                     </FormControl>
-                    <FormControl w={{ base: '100%', md: '40%' }}>
+                    <FormControl w={{ base: '100%', md: '100%' }}>
                         <Button
                             colorScheme={state === 'success' ? 'green' : 'blue'}
                             isLoading={state === 'submitting'}
@@ -115,7 +114,7 @@ export default function Signup() {
                             {state === 'success' ? <CheckIcon /> : 'Submit'}
                         </Button>
                     </FormControl>
-                </Stack>
+                </Box>
                 <Text
                     mt={2}
                     textAlign={'center'}
