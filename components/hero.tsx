@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
 import {
     Box,
     Heading,
@@ -16,6 +18,8 @@ import goldcoins from "@/public/gold-coins-stack.png";
 
 
 export default function Hero() {
+    const MotionButton = motion(Button);
+
     return (
         <>
             <Head>
@@ -53,16 +57,22 @@ export default function Hero() {
                         align={'center'}
                         alignSelf={'center'}
                         position={'relative'}>
-                        <Button
+                        <Link to="features-section" smooth={true} duration={500}>
+                        <MotionButton
                             colorScheme={'red'}
                             bg={'red.400'}
                             rounded={'full'}
                             px={6}
                             _hover={{
                                 bg: 'green.500',
-                            }}>
+                            }}
+                            initial={{ y: -50, opacity: 0 }} // Start 50px above its final position, and start invisible
+                            animate={{ y: 0, opacity: 1 }} // Animate to its final position and become visible
+                            transition={{ duration: 0.5 }} // Specify animation duration
+                        >
                             Join Waitlist
-                        </Button>
+                        </MotionButton>
+                        </Link>
                     </Stack>
                 </Stack>
 
@@ -88,3 +98,4 @@ const Arrow = createIcon({
         />
     ),
 });
+

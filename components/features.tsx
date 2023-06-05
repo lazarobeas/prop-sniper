@@ -15,7 +15,7 @@ interface FeatureProps {
 
 export default function Features() {
     return(
-        <Box p={10} bgGradient='linear(to-r, gray.300, yellow.400, pink.200)' >
+        <Box id="features-section" p={10} bgGradient='linear(to-r, gray.300, yellow.400, pink.200)' >
             <Heading
                 fontWeight={700}
                 mb={8}
