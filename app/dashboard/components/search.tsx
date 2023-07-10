@@ -1,4 +1,6 @@
+'use client'
 import {Input, Box, IconButton, useToast, Container, Flex, FormLabel, Button, Text, Select} from "@chakra-ui/react";
+
 import {Formik, Field, Form, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 import React from "react";
@@ -27,6 +29,8 @@ function PlayerForm() {
     const [isLoading, setIsLoading] = useState(false)
     const [prediction, setPrediction] = useState(null)
 
+
+    // @ts-ignore
     const handleFormSubmit = async (values, { setSubmitting }) => {
         setIsLoading(true)
         toast({
