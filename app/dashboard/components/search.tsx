@@ -24,14 +24,17 @@ const FormSchema = Yup.object().shape({
     plusMinus: Yup.number().required('Required'),
 });
 
+interface FormikBag {
+    setSubmitting: (isSubmitting: boolean) => void;
+}
+
 function PlayerForm() {
     const toast = useToast();
     const [isLoading, setIsLoading] = useState(false)
     const [prediction, setPrediction] = useState(null)
 
 
-    // @ts-ignore
-    const handleFormSubmit = async (values, { setSubmitting }) => {
+    const handleFormSubmit = async (values: any, { setSubmitting }: FormikBag) => {
         setIsLoading(true)
         toast({
             title: `Request sent to ${values.playerName}'s AI model.`,
