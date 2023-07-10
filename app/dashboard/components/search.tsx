@@ -1,6 +1,4 @@
-'use client'
 import {Input, Box, IconButton, useToast, Container, Flex, FormLabel, Button, Text, Select} from "@chakra-ui/react";
-
 import {Formik, Field, Form, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 import React from "react";
@@ -24,17 +22,13 @@ const FormSchema = Yup.object().shape({
     plusMinus: Yup.number().required('Required'),
 });
 
-interface FormikBag {
-    setSubmitting: (isSubmitting: boolean) => void;
-}
-
 function PlayerForm() {
     const toast = useToast();
     const [isLoading, setIsLoading] = useState(false)
     const [prediction, setPrediction] = useState(null)
 
-
-    const handleFormSubmit = async (values: any, { setSubmitting }: FormikBag) => {
+    // @ts-ignore
+    const handleFormSubmit = async (values, { setSubmitting }) => {
         setIsLoading(true)
         toast({
             title: `Request sent to ${values.playerName}'s AI model.`,
@@ -81,12 +75,10 @@ function PlayerForm() {
         }, 9000); // disables the button for 9 seconds
     };
 
-    const players = [
-        'Nikola Jokic'];
     // const players = [
-    //     'Aaron Gordon','Al Horford','Anthony Davis',
-    //     'Austin Reaves','Bam Adebayo','Bruce Brown','Caleb Martin','Chris Paul','Clint Capela','Dangelo Russel','DeAaron Fox',
-    //     'Dejounte Murray','Deandre Ayton','Dennis Schroder','Derrick White','LeBron James', 'Kevin Durant', 'Nikola Jokic','Stephen Curry', /* ...more players */];
+    //     'Nikola Jokic'];
+    const players = [
+        'ONLY JOKIC AVAILABLE NOW', 'Nikola Jokic' /* ...more players */];
 
 
     return (
@@ -101,7 +93,7 @@ function PlayerForm() {
                     overflow={'hidden'}
                     p={4}>
                     <Text mb={4}>
-                        This model is tailored for O/U player props and calculates a player&apos;s points with accuracy ranging from 47% - 65%.
+                        This model is tailored for O/U player props and calculates a player&amp;s points with accuracy ranging from 47% - 65%.
                         Please take into consideration unquantifiable circumstances such as injuries,
                         minute limitations, foul trouble, and many more. This model is trained on thousands of data points
                         further helping you make a purely data driven decision. Always supplement a prediction with research
@@ -250,5 +242,4 @@ function PlayerForm() {
         </Box>
     );
 }
-
 export default PlayerForm;
