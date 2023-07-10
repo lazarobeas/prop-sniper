@@ -101,7 +101,7 @@ function PlayerForm() {
                     overflow={'hidden'}
                     p={4}>
                     <Text mb={4}>
-                        This model is tailored for O/U player props and calculates a player's points with accuracy ranging from 47% - 65%.
+                        This model is tailored for O/U player props and calculates a player&apos;s points with accuracy ranging from 47% - 65%.
                         Please take into consideration unquantifiable circumstances such as injuries,
                         minute limitations, foul trouble, and many more. This model is trained on thousands of data points
                         further helping you make a purely data driven decision. Always supplement a prediction with research
