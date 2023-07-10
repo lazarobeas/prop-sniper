@@ -1,3 +1,4 @@
+'use client'
 import { FormEvent, ChangeEvent, useState } from 'react';
 import {
     Stack,

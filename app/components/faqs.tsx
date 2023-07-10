@@ -38,11 +38,15 @@ export default function Faqs() {
                         </ListItem>
                         <ListItem>
                             <ListIcon as={CheckIcon} color="green.400" />
+                            Become an data focused handicapper
+                        </ListItem>
+                        <ListItem>
+                            <ListIcon as={CheckIcon} color="green.400" />
                             Be more efficient with your bankroll
                         </ListItem>
                         <ListItem>
                             <ListIcon as={CheckIcon} color="green.400" />
-                            Use our platform from anywhere
+                            Use our web platform from anywhere
                         </ListItem>
                         <ListItem>
                             <ListIcon as={CheckIcon} color="green.400" />

@@ -1,16 +1,17 @@
 "use client"
 import { Inter } from 'next/font/google'
 import { ChakraProvider } from '@chakra-ui/react'
-import Navbar from "@/components/home/navbar";
-import Hero from "@/components/home/hero";
-import Features from "@/components/home/features";
-import Newsletter from "@/components/home/newsletter";
-import Footer from "@/components/home/footer";
-import FAQs from "@/components/home/faqs";
-import Signup from "@/components/home/signup";
+import { CacheProvider} from "@chakra-ui/next-js";
+import Navbar from "@/app/components/navbar";
+import Hero from "@/app/components/hero";
+import Features from "@/app/components/features";
+import Newsletter from "@/app/components/newsletter";
+import Footer from "@/app/components/footer";
+import FAQs from "@/app/components/faqs";
+import Signup from "@/app/components/signup";
 
 
-import Box from "@/components/home/features";
+import Box from "@/app/components/features";
 
 const inter = Inter({ subsets: ['latin'] })
 export default function RootLayout({
@@ -21,15 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
     <body className={inter.className}>
+    <CacheProvider>
     <ChakraProvider>
-      < Navbar />
-      < Hero />
-      < Features />
-      < FAQs />
-      < Signup />
-      < Footer />
       {children}
     </ChakraProvider>
+    </CacheProvider>
     </body>
     </html>
   )

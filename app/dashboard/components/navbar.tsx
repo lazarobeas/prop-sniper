@@ -1,25 +1,16 @@
-import Sniper from '@/public/sniper.svg'
-
+'use client'
 import { ReactNode } from 'react';
 import {
     Box,
     Flex,
-    Avatar,
     Link,
     Button,
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    MenuDivider,
-    useDisclosure,
     useColorModeValue,
     Stack,
-    useColorMode,
-    Center, Text, Spacer,
+    Text, Spacer
 } from '@chakra-ui/react';
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import Image from "next/image";
+
 
 const NavLink = ({ children }: { children: ReactNode }) => (
     <Link
@@ -30,19 +21,20 @@ const NavLink = ({ children }: { children: ReactNode }) => (
             textDecoration: 'none',
             bg: useColorModeValue('gray.200', 'gray.700'),
         }}
-        href={'#'}>
+        href={'/'}>
         {children}
     </Link>
 );
 
 export default function Navbar() {
     return (
-        <>
             <Box bgGradient='linear(to-r, gray.300, yellow.400, pink.200)' px={4}>
                 <Flex h={16} alignItems={'center'} justifyContent={'left'} p={'2'}>
                     <Box>
                         <a>
+                            <Link href={'/'}>
                             <Image src='target.svg' alt="logo" width="50" height='50'/>
+                            </Link>
                         </a>
                     </Box>
                     <Box p={'6'}>
@@ -51,11 +43,20 @@ export default function Navbar() {
                     <Spacer />
                     <Flex alignItems={'right'}>
                         <Stack direction={'row'} spacing={7}>
-                            <Text as='b' fontSize={{ base: 'md', md: 'xl', lg: '2xl' }}>Private Beta Available</Text>
+
+                                <Button
+                                    colorScheme={'red'}
+                                    bg={'red.400'}
+                                    rounded={'full'}
+                                    px={6}
+                                    _hover={{
+                                        bg: 'green.500',
+                                    }}>
+                                    <Text as='b' fontSize={{ base: 'md', md: 'xl', lg: '2xl' }}>Dashboard</Text>
+                                </Button>
                         </Stack>
                     </Flex>
                 </Flex>
             </Box>
-        </>
     );
 }
