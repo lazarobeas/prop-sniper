@@ -22,6 +22,7 @@ export default function Signup() {
     const [error, setError] = useState(false);
     const toast = useToast();
 
+
     const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -35,9 +36,12 @@ export default function Signup() {
         setState("submitting");
 
         try {
-            const res = await fetch('/api/subscribe', {
+            const res = await fetch('/api/subscription', {
                 method: 'POST',
-                body: JSON.stringify({ email: email })
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email })
             });
 
             const data = await res.json();
@@ -51,6 +55,7 @@ export default function Signup() {
                 setState("success");
                 setEmail('');
             } else {
+                // Display the error message from the API in the toast notification
                 throw new Error(data?.error || 'Something went wrong, try again later.')
             }
         } catch(e) {
@@ -61,6 +66,8 @@ export default function Signup() {
             setState("initial");
         }
     }
+
+
 
     return (
         <Flex
