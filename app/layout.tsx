@@ -5,7 +5,6 @@ import { CacheProvider} from "@chakra-ui/next-js";
 import Navbar from "@/app/components/navbar";
 import Hero from "@/app/components/hero";
 import Features from "@/app/components/features";
-import Newsletter from "@/app/components/newsletter";
 import Footer from "@/app/components/footer";
 import FAQs from "@/app/components/faqs";
 import Signup from "@/app/components/signup";
