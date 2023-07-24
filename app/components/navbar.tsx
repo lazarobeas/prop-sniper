@@ -17,7 +17,6 @@ import {
     useColorMode,
     Center, Text, Spacer
 } from '@chakra-ui/react';
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import Image from "next/image";
 import NextLink from 'next/link'
 
