@@ -36,7 +36,8 @@ export default function Footer() {
                     <Stack align={'flex-start'}>
                         <ListHeader>Sports</ListHeader>
                         <Text>NBA</Text>
-                        <Text>Golf</Text>
+                        <Text>CS2</Text>
+                        <Text>LoL</Text>
                         <Text>Coming Soon...</Text>
                     </Stack>
                     <Stack align={'flex-start'}>
@@ -72,7 +73,7 @@ export default function Footer() {
                     <Logo />
                 </Flex>
                 <Text pt={6} fontSize={'sm'} textAlign={'center'}>
-                    © 2023 propsniper.io | All rights reserved.
+                    © 2024 propsniper.io | All rights reserved.
                 </Text>
                 <Text pt={1} fontSize={'sm'} textAlign={'center'}>
                     This platform is meant for entertainment purposes only.

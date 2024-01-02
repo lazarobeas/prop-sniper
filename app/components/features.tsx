@@ -38,11 +38,11 @@ export default function Features() {
                         <Heading size='lg'>Player Models</Heading>
                         <Divider bg={"black"}/>
                         <Text>
-                            Leveraging AI, our models give you an edge in Pick&apos;em contests.
-                            Simply input a player&apos;s stats and its prop line.
-                            Our system then simulates outcomes, providing you with the
-                            probability of over/under performance. This helps you make
-                            informed decisions swiftly and confidently.
+                            Leveraging AI, our proprietary models give you an edge in Pick&apos;em contests.
+                            Simply input a player&apos;s stats along with its prop line.
+                            Our model then simulates thousands of outcomes and provides you with
+                            the best over/under outcome. This helps you make
+                            educated decisions swiftly and confidently.
                         </Text>
                     </Stack>
                 </CardBody>
@@ -57,15 +57,14 @@ export default function Features() {
                         alt='Bar chart'
                     />
                     <Stack mt='6' spacing='3'>
-                        <Heading size='lg'>Smarter Picks</Heading>
+                        <Heading size='lg'>Discord Bots</Heading>
                         <Divider bg={"black"}/>
                         <Text>
-                            Effortlessly refine your pick selection with our cutting-edge platform.
-                            Dive into comprehensive stats and use filters to pinpoint potential
-                            winners from a multitude of props. Harness the power of performance
-                            probabilities to fine-tune your strategy. Experience intelligent
-                            decision-making, precise tracking, and dynamic adjustments.
-
+                            Designed to keep you a step ahead in the dynamic world of sports betting, these bots are your
+                            go-to source for discovering high-value +EV propositions. Whether you&apos;re crafting strategies
+                            for half-time bets or responding swiftly to significant shifts during the game, our tools offer
+                            real-time insights comparable to a sports market order book.
+                            Seize opportunities as they arise and stay informed with every meaningful market fluctuation.
                         </Text>
                     </Stack>
                 </CardBody>

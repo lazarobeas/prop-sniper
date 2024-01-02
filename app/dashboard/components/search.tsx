@@ -1,4 +1,4 @@
-import {Input, Box, IconButton, useToast, Container, Flex, FormLabel, Button, Text, Select} from "@chakra-ui/react";
+import {Input, Box, useToast, Container, FormLabel, Button, Text, Select} from "@chakra-ui/react";
 import {Formik, Field, Form, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 import React from "react";
@@ -9,14 +9,10 @@ const FormSchema = Yup.object().shape({
     line: Yup.number().required('Required').min(0.5, "Must be higher than 0.5").max(40, "Are you sure this is the correct line?"),
     homeCourt: Yup.number().required('Required').min(0, "Must be 0 or 1").max(1, "Must be 0 or 1"),
     assists: Yup.number().required('Required').min(0,'Must be positive').max(25, "Are you sure this is the correct stat?"),
-    steals: Yup.number().required('Required').min(0,'Must be positive').max(25, "Are you sure this is the correct stat?"),
     rebounds: Yup.number().required('Required').min(0,'Must be positive').max(25, "Are you sure this is the correct stat?"),
     turnovers: Yup.number().required('Required').min(0,'Must be positive').max(25, "Are you sure this is the correct stat?"),
     threePointFGMade: Yup.number().required('Required').min(0,'Must be positive').max(25, "Are you sure this is the correct stat?"),
     threePointFGAttempted: Yup.number().required('Required').min(0,'Must be positive').max(25, "Are you sure this is the correct stat?"),
-    blocks: Yup.number().required('Required').min(0,'Must be positive').max(25, "Are you sure this is the correct stat?"),
-    FGA: Yup.number().required('Required').min(0,'Must be positive').max(25, "Are you sure this is the correct stat?"),
-    FGM: Yup.number().required('Required').min(0,'Must be positive').max(25, "Are you sure this is the correct stat?"),
     FTA: Yup.number().required('Required').min(0,'Must be positive').max(25, "Are you sure this is the correct stat?"),
     FTM: Yup.number().required('Required').min(0,'Must be positive').max(25, "Are you sure this is the correct stat?"),
     plusMinus: Yup.number().required('Required'),
@@ -39,17 +35,14 @@ function PlayerForm() {
         });
         try {
             const predictionData = {
+                playerName: values.playerName,
                 LINE: values.line,
                 HOME: values.homeCourt,
                 AST: values.assists,
-                STL: values.steals,
                 REB: values.rebounds,
                 TOV: values.turnovers,
                 FG3M: values.threePointFGMade,
                 FG3A: values.threePointFGAttempted,
-                BLK: values.blocks,
-                FGA: values.FGA,
-                FGM: values.FGM,
                 FTA: values.FTA,
                 FTM: values.FTM,
                 PLUS_MINUS: values.plusMinus,
@@ -75,10 +68,8 @@ function PlayerForm() {
         }, 9000); // disables the button for 9 seconds
     };
 
-    // const players = [
-    //     'Nikola Jokic'];
     const players = [
-        'ONLY JOKIC AVAILABLE NOW', 'Nikola Jokic' /* ...more players */];
+        'NikolaJokic', 'LukaDoncic' /* ...more players */];
 
 
     return (
@@ -93,10 +84,10 @@ function PlayerForm() {
                     overflow={'hidden'}
                     p={4}>
                     <Text mb={4}>
-                        This model is tailored for O/U player props and calculates a player&amp;s points with accuracy ranging from 47% - 65%.
+                        This model is tailored for O/U player props and calculates a player&apos;s points with accuracy ranging from 47% - 65%.
                         Please take into consideration unquantifiable circumstances such as injuries,
-                        minute limitations, foul trouble, and many more. This model is trained on thousands of data points
-                        further helping you make a purely data driven decision. Always supplement a prediction with research
+                        minute limitations, foul trouble, and many more. This model is purely trained on thousands of data points
+                        helping you make a purely data driven decision. Always supplement a prediction with research
                         and never risk more than what you can afford to lose!
 
                     </Text>
@@ -106,14 +97,10 @@ function PlayerForm() {
                             line: '',
                             homeCourt: '',
                             assists: '',
-                            steals: '',
                             rebounds: '',
                             turnovers: '',
                             threePointFGMade: '',
                             threePointFGAttempted: '',
-                            blocks: '',
-                            FGA: '',
-                            FGM: '',
                             FTA: '',
                             FTM:'',
                             plusMinus: '',
@@ -150,12 +137,6 @@ function PlayerForm() {
 
                             </Box>
 
-                            <Box mb={4}>
-                                <FormLabel htmlFor="steals">Last 5 Game Average Steals:</FormLabel>
-                                <Field as={Input} id="steals" name="steals" placeholder="Enter steals average" type="number" />
-                                <ErrorMessage name="steals" component="div" />
-
-                            </Box>
 
                             <Box mb={4}>
                                 <FormLabel htmlFor="rebounds">Last 5 Game Average Rebounds:</FormLabel>
@@ -186,32 +167,12 @@ function PlayerForm() {
                             </Box>
 
                             <Box mb={4}>
-                                <FormLabel htmlFor="blocks">Last 5 Game Average Blocks:</FormLabel>
-                                <Field as={Input} id="blocks" name="blocks" placeholder="Enter blocks average" type="number" />
-                                <ErrorMessage name="blocks" component="div" />
-
-                            </Box>
-
-                            <Box mb={4}>
-                                <FormLabel htmlFor="FGA">Last 5 Game Average Field Goals Attempted:</FormLabel>
-                                <Field as={Input} id="FGA" name="FGA" placeholder="Enter field goals attempted average" type="number" />
-                                <ErrorMessage name="FGA" component="div" />
-
-                            </Box>
-
-                            <Box mb={4}>
-                                <FormLabel htmlFor="FGM">Last 5 Game Average Field Goals Made:</FormLabel>
-                                <Field as={Input} id="FGM" name="FGM" placeholder="Enter field goals made average" type="number" />
-                                <ErrorMessage name="FGM" component="div" />
-
-                            </Box>
-
-                            <Box mb={4}>
                                 <FormLabel htmlFor="FTA">Last 5 Game Average Free Throw Attempts:</FormLabel>
                                 <Field as={Input} id="FTA" name="FTA" placeholder="Enter free throw attempts average" type="number" />
                                 <ErrorMessage name="FTA" component="div" />
 
                             </Box>
+
                             <Box mb={4}>
                                 <FormLabel htmlFor="FTM">Last 5 Game Average Free Throw Made:</FormLabel>
                                 <Field as={Input} id="FTM" name="FTM" placeholder="Enter free throw made average" type="number" />

@@ -43,11 +43,11 @@ export default function Hero() {
                         lineHeight={'110%'}>
                         Make winning easier <br />
                         <Text as={'span'} color={'red'}>
-                            AI powered insights
+                            Tools for your DFS community
                         </Text>
                     </Heading>
                     <Text color={'gray.500'}>
-                        Streamline player prop research with our platform and take the guesswork out of DFS.
+                        Streamline player prop research with our tools and take the guesswork out of DFS.
                         With our AI-powered models, PropSniper analyzes thousands of player performances and highlights
                         the sharpest props to help you craft that perfect parlay!
                     </Text>
@@ -70,7 +70,7 @@ export default function Hero() {
                             animate={{ y: 0, opacity: 1 }} // Animate to its final position and become visible
                             transition={{ duration: 0.5 }} // Specify animation duration
                         >
-                            Join Waitlist
+                            Learn More!
                         </MotionButton>
                         </Link>
                     </Stack>

@@ -86,7 +86,7 @@ export default function Signup() {
                     fontSize={{ base: 'xl', sm: '2xl' }}
                     textAlign={'center'}
                     mb={5}>
-                    Get early access
+                    Get A Free 7-day Trial!
                 </Heading>
                 <Box
                     as={'form'}

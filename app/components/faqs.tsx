@@ -1,13 +1,10 @@
 import {
     Box,
     Center,
-    Text,
-    Stack,
     List,
     ListItem,
     ListIcon,
-    Button,
-    useColorModeValue, Heading,
+    Heading,
 } from '@chakra-ui/react';
 import { CheckIcon } from '@chakra-ui/icons';
 
@@ -50,7 +47,7 @@ export default function Faqs() {
                         </ListItem>
                         <ListItem>
                             <ListIcon as={CheckIcon} color="green.400" />
-                            Be the first to test new features
+                            Provide value to your Discord community!
                         </ListItem>
                     </List>
                 </Box>

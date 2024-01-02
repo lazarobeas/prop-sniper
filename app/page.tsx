@@ -16,7 +16,6 @@ export default function Home() {
           < FAQs />
           < Signup />
           < Footer />
-
       </body>
       </html>  )
 }
